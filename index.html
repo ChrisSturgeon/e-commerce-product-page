@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="./imgs/favicon-32x32.png" />
+    <title>Sneakers - Fall Limited Edition</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <script defer src="./script.js"></script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <nav class="top">
+          <ul class="hamburger">
+            <li>
+              <button id="hamburger-open">
+                <img src="./imgs/icon-menu.svg" />
+              </button>
+            </li>
+          </ul>
+          <ul class="logo">
+            <li>
+              <a href="#"
+                ><img
+                  src="./imgs/logo.svg"
+                  alt="sneakers-logo"
+                  aria-label="Return to Sneakers home page"
+              /></a>
+            </li>
+          </ul>
+          <ul class="subs">
+            <li>
+              <a href="#">Collections</a>
+            </li>
+            <li>
+              <a href="#">Men</a>
+            </li>
+            <li>
+              <a href="#">Women</a>
+            </li>
+            <li>
+              <a href="#">About</a>
+            </li>
+            <li>
+              <a href="#">Contact</a>
+            </li>
+          </ul>
+          <ul class="cart-user">
+            <li>
+              <button>
+                <img
+                  src="./imgs/icon-cart.svg"
+                  alt="cart-icon"
+                  aria-label="View cart"
+                />
+              </button>
+            </li>
+            <li>
+              <a class="user-profile-link" href="#"
+                ><img
+                  src="./imgs/image-avatar.png"
+                  alt="user-avatar"
+                  aria-label="View your profile"
+              /></a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+
+      <div id="side-modal">
+        <div id="side-bar">
+          <button id="hamburger-close">
+            <img src="./imgs/icon-close.svg" />
+          </button>
+          <nav>
+            <ul class="subs">
+              <li>
+                <a href="#">Collections</a>
+              </li>
+              <li>
+                <a href="#">Men</a>
+              </li>
+              <li>
+                <a href="#">Women</a>
+              </li>
+              <li>
+                <a href="#">About</a>
+              </li>
+              <li>
+                <a href="#">Contact</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <main>
+        <div class="product-images">
+          <!-- Mobile images section -->
+          <div class="mobile">
+            <img src="./imgs/image-product-1.jpg" />
+          </div>
+          <!-- Desktop images section -->
+          <div class="desktop">
+            <p>Desktop images here</p>
+            <div class="main-image">
+              <img />
+              <button id="prev-image"></button>
+              <button id="next-image"></button>
+            </div>
+            <div class="thumb-images"></div>
+          </div>
+        </div>
+        <div class="product-details"></div>
+      </main>
+      <footer>I'm the footer</footer>
+    </div>
+  </body>
+</html>
