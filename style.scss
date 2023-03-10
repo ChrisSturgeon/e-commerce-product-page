@@ -14,6 +14,12 @@ $white: white;
   padding: 0;
 }
 
+%image-button {
+  background-color: $light-grayish-blue;
+  border-radius: 100vw;
+  padding: 0.2em;
+}
+
 @mixin respond($breakpoint) {
   @if ($breakpoint == large) {
     @media (min-width: 1024px) {
@@ -192,9 +198,39 @@ main {
   .product-images {
     .mobile {
       background-color: red;
-
+      position: relative;
       @include respond(medium) {
         display: none;
+      }
+
+      button {
+        @extend %image-button;
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &#mobile-next-image {
+          top: calc(50% - 20px);
+          right: 4%;
+          img {
+            position: relative;
+            left: 1px;
+            height: 14px;
+          }
+        }
+
+        &#mobile-prev-image {
+          top: calc(50% - 20px);
+          left: 4%;
+          img {
+            position: relative;
+            right: 2px;
+            height: 14px;
+          }
+        }
       }
     }
 

@@ -27,3 +27,16 @@ function hideSideNav() {
 hamburgerOpen.addEventListener('click', showSideNav);
 hamburgerClose.addEventListener('click', hideSideNav);
 sideModal.addEventListener('click', hideSideNav);
+
+// Controlling mobile images
+
+const imageURLS = ['image-product-1.jpg', 'image-product-2.jpg'];
+const mobileNextButton = document.querySelector('#mobile-next-image');
+const mainImage = document.querySelector('#main-image');
+
+let currentImage = imageURLS[0];
+function mobileNextImage() {
+  mainImage.src = `./imgs/${imageURLS[1]}`;
+}
+
+mobileNextButton.addEventListener('click', mobileNextImage);

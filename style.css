@@ -4,6 +4,12 @@ ul, body {
   padding: 0;
 }
 
+main .product-images .mobile button {
+  background-color: hsl(223, 64%, 98%);
+  border-radius: 100vw;
+  padding: 0.2em;
+}
+
 body {
   min-height: 100dvh;
   font: 16px "Kumbh Sans", sans-serif;
@@ -159,11 +165,38 @@ main img {
 }
 main .product-images .mobile {
   background-color: red;
+  position: relative;
 }
 @media (min-width: 768px) {
   main .product-images .mobile {
     display: none;
   }
+}
+main .product-images .mobile button {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main .product-images .mobile button#mobile-next-image {
+  top: calc(50% - 20px);
+  right: 4%;
+}
+main .product-images .mobile button#mobile-next-image img {
+  position: relative;
+  left: 1px;
+  height: 14px;
+}
+main .product-images .mobile button#mobile-prev-image {
+  top: calc(50% - 20px);
+  left: 4%;
+}
+main .product-images .mobile button#mobile-prev-image img {
+  position: relative;
+  right: 2px;
+  height: 14px;
 }
 main .product-images .desktop {
   display: none;
