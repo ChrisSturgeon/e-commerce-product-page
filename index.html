@@ -105,7 +105,7 @@
         <div class="product-images">
           <!-- Mobile images section -->
           <div class="mobile">
-            <img src="./imgs/image-product-1.jpg" id="main-image" />
+            <img src="./imgs/image-product-1.jpg" id="mobile-main-image" />
             <button id="mobile-prev-image">
               <img src="./imgs/icon-previous.svg" />
             </button>
@@ -115,13 +115,36 @@
           </div>
           <!-- Desktop images section -->
           <div class="desktop">
-            <p>Desktop images here</p>
-            <div class="main-image">
-              <img />
-              <button id="prev-image"></button>
-              <button id="next-image"></button>
+            <img src="./imgs/image-product-1.jpg" id="desktop-main-image" />
+            <div class="thumb-box active" value="0">
+              <img src="./imgs/image-product-1-thumbnail.jpg" image="0" />
             </div>
-            <div class="thumb-images"></div>
+            <div class="thumb-box" value="1">
+              <img src="./imgs/image-product-2-thumbnail.jpg" image="1" />
+            </div>
+            <div class="thumb-box" value="2">
+              <img src="./imgs/image-product-3-thumbnail.jpg" image="2" />
+            </div>
+            <div class="thumb-box" value="3">
+              <img src="./imgs/image-product-4-thumbnail.jpg" image="3" />
+            </div>
+          </div>
+        </div>
+        <div id="images-modal">
+          <img src="./imgs/image-product-1.jpg" id="modal-main-image" />
+          <div class="modal-thumbs">
+            <div class="modal-thumb-box active" value="0">
+              <img src="./imgs/image-product-1-thumbnail.jpg" image="0" />
+            </div>
+            <div class="modal-thumb-box" value="1">
+              <img src="./imgs/image-product-2-thumbnail.jpg" image="1" />
+            </div>
+            <div class="modal-thumb-box" value="2">
+              <img src="./imgs/image-product-2-thumbnail.jpg" image="2" />
+            </div>
+            <div class="modal-thumb-box" value="3">
+              <img src="./imgs/image-product-3-thumbnail.jpg" image="3" />
+            </div>
           </div>
         </div>
         <div class="product-details"></div>
