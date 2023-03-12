@@ -14,6 +14,10 @@
       rel="stylesheet"
     />
     <script defer src="./script.js"></script>
+    <meta
+      name="description"
+      content="Buy Fall Limited Edition Sneakers and Sneakers Store"
+    />
   </head>
   <body>
     <div class="wrapper">
@@ -106,16 +110,65 @@
           <!-- Mobile images section -->
           <div class="mobile">
             <img src="./imgs/image-product-1.jpg" id="mobile-main-image" />
-            <button id="mobile-prev-image">
+            <button class="prev-image" id="mobile-prev-image">
               <img src="./imgs/icon-previous.svg" />
             </button>
-            <button id="mobile-next-image">
+            <button
+              class="next-image"
+              id="mobile-next-image"
+              class="next-image"
+            >
               <img src="./imgs/icon-next.svg" />
             </button>
           </div>
           <!-- Desktop images section -->
           <div class="desktop">
-            <img src="./imgs/image-product-1.jpg" id="desktop-main-image" />
+            <img
+              src="./imgs/image-product-1.jpg"
+              id="desktop-main-image"
+              tabindex="0"
+            />
+            <div class="thumb-box active" value="0">
+              <img
+                src="./imgs/image-product-1-thumbnail.jpg"
+                image="0"
+                tabindex="0"
+              />
+            </div>
+            <div class="thumb-box" value="1">
+              <img
+                src="./imgs/image-product-2-thumbnail.jpg"
+                image="1"
+                tabindex="0"
+              />
+            </div>
+            <div class="thumb-box" value="2">
+              <img
+                src="./imgs/image-product-3-thumbnail.jpg"
+                image="2"
+                tabindex="0"
+              />
+            </div>
+            <div class="thumb-box" value="3">
+              <img
+                src="./imgs/image-product-4-thumbnail.jpg"
+                image="3"
+                tabindex="0"
+              />
+            </div>
+          </div>
+        </div>
+        <div id="images-modal">
+          <div class="modal-main-frame">
+            <img src="./imgs/image-product-1.jpg" id="modal-main-image" />
+            <button class="prev-image prev">
+              <img src="./imgs/icon-previous.svg" />
+            </button>
+            <button class="next-image next">
+              <img src="./imgs/icon-next.svg" />
+            </button>
+          </div>
+          <div class="modal-thumbs">
             <div class="thumb-box active" value="0">
               <img src="./imgs/image-product-1-thumbnail.jpg" image="0" />
             </div>
@@ -127,23 +180,6 @@
             </div>
             <div class="thumb-box" value="3">
               <img src="./imgs/image-product-4-thumbnail.jpg" image="3" />
-            </div>
-          </div>
-        </div>
-        <div id="images-modal">
-          <img src="./imgs/image-product-1.jpg" id="modal-main-image" />
-          <div class="modal-thumbs">
-            <div class="modal-thumb-box active" value="0">
-              <img src="./imgs/image-product-1-thumbnail.jpg" image="0" />
-            </div>
-            <div class="modal-thumb-box" value="1">
-              <img src="./imgs/image-product-2-thumbnail.jpg" image="1" />
-            </div>
-            <div class="modal-thumb-box" value="2">
-              <img src="./imgs/image-product-2-thumbnail.jpg" image="2" />
-            </div>
-            <div class="modal-thumb-box" value="3">
-              <img src="./imgs/image-product-3-thumbnail.jpg" image="3" />
             </div>
           </div>
         </div>
