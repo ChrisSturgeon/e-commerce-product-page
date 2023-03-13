@@ -125,6 +125,12 @@ document
     }
   });
 
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter') {
+    toggleImagesModal(true);
+  }
+});
+
 // Prevent click on modal main image from closing modal
 document
   .querySelector('#images-modal')
@@ -153,4 +159,15 @@ document.querySelectorAll('.next-image').forEach((button) => {
 // Thumbnail event listeners
 document.querySelectorAll('.thumb-box').forEach((thumb) => {
   thumb.addEventListener('click', (e) => selectImage(e));
+});
+
+// Keyboard event listeners
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'ArrowRight') {
+    nextImage();
+  }
+
+  if (e.key === 'ArrowLeft') {
+    prevImage();
+  }
 });

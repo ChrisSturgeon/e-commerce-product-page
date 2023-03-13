@@ -1,4 +1,4 @@
-ul, body {
+main .product-details h1, main .product-details h2, ul, body {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -14,6 +14,14 @@ main #images-modal .modal-main-frame button, main .product-images .mobile button
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+main #images-modal .modal-main-frame button.next:hover svg path, main #images-modal .modal-main-frame button.prev:hover svg path {
+  stroke: hsl(26, 100%, 55%);
+}
+
+main #images-modal .modal-main-frame button#close-btn:hover svg path {
+  fill: hsl(26, 100%, 55%);
 }
 
 main #images-modal .modal-thumbs .thumb-box img, main .product-images .desktop .thumb-box img {
@@ -127,6 +135,12 @@ nav.top ul.cart-user li a {
   display: flex;
   align-items: center;
 }
+nav.top ul.cart-user li a.user-profile-link:hover img {
+  outline: 2px solid hsl(26, 100%, 55%);
+}
+nav.top ul.cart-user li a.user-profile-link img {
+  border-radius: 100vw;
+}
 nav.top ul.cart-user img {
   max-height: 30px;
 }
@@ -181,11 +195,10 @@ nav.top ul.cart-user img {
 
 main {
   display: grid;
-  grid-template-rows: auto auto;
 }
 @media (min-width: 768px) {
   main {
-    grid-template-columns: 40% 60%;
+    grid-template-columns: 40% 5% 55%;
     padding: 3em 2em;
   }
 }
@@ -201,6 +214,9 @@ main .product-images .mobile {
   main .product-images .mobile {
     display: none;
   }
+}
+main .product-images .mobile #mobile-main-image {
+  border-radius: 0;
 }
 main .product-images .mobile button#mobile-next-image {
   top: calc(50% - 20px);
@@ -251,10 +267,20 @@ main #images-modal {
   justify-content: center;
   align-items: center;
   gap: 2em;
+  z-index: 2;
 }
 main #images-modal .modal-main-frame {
   max-width: 70vh;
   position: relative;
+}
+main #images-modal .modal-main-frame button#close-btn {
+  background-color: transparent;
+  top: -45px;
+  right: -16px;
+  border-radius: 0;
+}
+main #images-modal .modal-main-frame button#close-btn svg path {
+  fill: white;
 }
 main #images-modal .modal-main-frame button {
   height: 50px;
@@ -264,9 +290,9 @@ main #images-modal .modal-main-frame button {
 main #images-modal .modal-main-frame button.prev {
   left: -25px;
 }
-main #images-modal .modal-main-frame button.prev img {
+main #images-modal .modal-main-frame button.prev svg {
   position: relative;
-  left: -3px;
+  left: -2px;
 }
 main #images-modal .modal-main-frame button.next {
   right: -25px;
@@ -288,9 +314,155 @@ main #images-modal .modal-thumbs .thumb-box {
 main #images-modal .modal-thumbs .thumb-box img:hover {
   opacity: 0.5;
 }
+main .product-details-wrapper {
+  display: flex;
+  box-sizing: border-box;
+  width: 100%;
+  overflow: hidden;
+}
+@media (min-width: 768px) {
+  main .product-details-wrapper {
+    grid-column-start: 3;
+  }
+}
+@media (min-width: 768px) {
+  main .product-details-wrapper {
+    align-items: center;
+  }
+}
+main .product-details {
+  padding: 1em;
+  box-sizing: border-box;
+}
+main .product-details h2 {
+  color: hsl(26, 100%, 55%);
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+}
+main .product-details h1 {
+  font-size: 2.2rem;
+  margin: 0.5em 0;
+  line-height: 1.1;
+}
+main .product-details p {
+  color: hsl(219, 9%, 45%);
+  margin: 2em 0;
+  letter-spacing: 0.015em;
+}
+main .product-details .prices {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+@media (min-width: 768px) {
+  main .product-details .prices {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+main .product-details .prices .sale-price-percentage {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+main .product-details .prices .sale-price-percentage .sale-price {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+main .product-details .prices .sale-price-percentage .discount {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: hsl(26, 100%, 55%);
+  background-color: hsl(25, 100%, 94%);
+  padding: 0.25em 0.5em;
+  border-radius: 10%;
+}
+main .product-details .prices .original-price {
+  color: hsl(220, 14%, 75%);
+  position: relative;
+}
+main .product-details .prices .original-price:after {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 58%;
+  content: " ";
+  background: hsl(220, 14%, 75%);
+  height: 1px;
+}
+main .product-details .basket-add {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+  margin: 1em 0;
+}
+@media (min-width: 768px) {
+  main .product-details .basket-add {
+    flex-wrap: nowrap;
+  }
+}
+main .product-details .basket-add .basket {
+  background-color: green;
+  height: 50px;
+  width: 100%;
+  background-color: hsl(223, 64%, 98%);
+  padding: 0 0.5em;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+main .product-details .basket-add .basket button {
+  width: 30px;
+  height: 100%;
+}
+main .product-details .basket-add .basket button:hover {
+  opacity: 0.5;
+}
+main .product-details .basket-add .basket div {
+  flex-basis: 100%;
+  text-align: center;
+}
+@media (min-width: 768px) {
+  main .product-details .basket-add .basket {
+    width: 150px;
+  }
+}
+main .product-details .basket-add .add {
+  height: 50px;
+  width: 100%;
+  border-radius: 10px;
+  background-color: hsl(26, 100%, 55%);
+  color: white;
+  box-shadow: 0px 3px 15px hsl(25, 100%, 94%);
+}
+@media (min-width: 768px) {
+  main .product-details .basket-add .add {
+    width: clamp(200px, 90%, 250px);
+  }
+}
+main .product-details .basket-add .add span {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: white;
+}
+main .product-details .basket-add .add span svg {
+  transform: scale(0.75);
+}
+main .product-details .basket-add .add span svg path {
+  stroke: white;
+  fill: white;
+  stroke-width: 0.01;
+  font-size: 0.2rem;
+}
 @media (min-width: 768px) {
   main {
     border-top: 0.5px solid hsl(220, 14%, 75%);
+    line-height: 1.5;
   }
 }
 
