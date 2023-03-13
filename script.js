@@ -171,3 +171,77 @@ document.addEventListener('keydown', (e) => {
     prevImage();
   }
 });
+
+// **** Cart ****
+
+let itemsCount = 0;
+let cartIsVisible = false;
+
+// Opens and closes cart
+function toggleCart() {
+  if (cartIsVisible) {
+    document.querySelector('.cart-summary-wrapper').style.display = 'none';
+    cartIsVisible = false;
+  } else {
+    document.querySelector('.cart-summary-wrapper').style.display = 'block';
+    cartIsVisible = true;
+  }
+}
+
+// Updates all elements which display number of items in cart
+function updateItemsCount() {
+  document.querySelectorAll('.items-count').forEach((count) => {
+    count.innerText = `${itemsCount}`;
+  });
+}
+
+function updateCart() {
+  if (itemsCount >= 1) {
+    document.querySelector('.cart-icon-count').style.display = 'block';
+    document.querySelector('.empty').style.display = 'none';
+    document.querySelector('.cart-items').style.display = 'grid';
+    document.querySelector('#checkout-quantity').innerText = `${itemsCount}`;
+    document.querySelector('#checkout-total').innerText = ` $${
+      125 * itemsCount
+    }.00`;
+  } else {
+    document.querySelector('.cart-icon-count').style.display = 'none';
+    document.querySelector('.empty').style.display = 'flex';
+    document.querySelector('.cart-items').style.display = 'none';
+  }
+}
+
+function incrementItemsCount() {
+  itemsCount++;
+  updateItemsCount();
+  updateCart();
+}
+
+function decrementItemsCount() {
+  if (itemsCount >= 1) {
+    itemsCount--;
+    updateItemsCount();
+  }
+  updateCart();
+}
+
+function clearCart() {
+  itemsCount = 0;
+  updateItemsCount();
+  updateCart();
+}
+
+// Event listeners
+document.querySelector('#cart-btn').addEventListener('click', toggleCart);
+document.querySelector('#close-cart-btn').addEventListener('click', toggleCart);
+
+document
+  .querySelector('#increment-items-btn')
+  .addEventListener('click', incrementItemsCount);
+
+document
+  .querySelector('#decrement-items-btn')
+  .addEventListener('click', decrementItemsCount);
+
+document.querySelector('#clear-cart-btn').addEventListener('click', clearCart);
+updateItemsCount();
